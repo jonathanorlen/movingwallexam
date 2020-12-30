@@ -68,7 +68,10 @@ export class CampaignService {
   search(search) {
     if (!search) {
       // if search null return null
-      return this.http.get<Campaign[]>(this.url);
+      return this.http.get<Campaign[]>(this.url).pipe(
+      tap(data => console.log('no search')),
+        catchError(this.handleError<Campaign>('Search campaign'))
+      );
     }
 
     return this.http.get<Campaign[]>(`${this.url}/?name=${search}`, this.httpOptions).pipe(

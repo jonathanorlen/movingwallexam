@@ -9,7 +9,7 @@ import {Campaign} from '../campaign';
 })
 export class IndexComponent implements OnInit {
 
-  campaigns: Campaign[];
+  campaigns;
   @Input() search: string = '';
   constructor(
     private campaignService: CampaignService
