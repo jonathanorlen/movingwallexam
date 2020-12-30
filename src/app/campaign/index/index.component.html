@@ -1,0 +1,56 @@
+<div class="container">
+     <div class="row">
+          <div class="col-md-12">
+               <div class="card p-0">
+                    <div class="card-header">
+                    <div class="form-group p-0">
+                         <div class="row">
+                              <div class="col-md-5">
+                                   <div class="input-group mb-3">
+                                        <input type="text" class="form-control" [(ngModel)]="search" placeholder="Search Campaign" aria-label="">
+                                        <div class="input-group-append">
+                                             <button class="btn btn-primary" type="button" (click)="submit()"><i-feather name="search"></i-feather>
+                                             </button>
+                                        </div>
+                                   </div>
+                              </div>
+                              <div class="col-md-7">
+                                   <a routerLink="/campaign/create" class="btn btn-info float-right">
+                                        <i-feather name="edit"></i-feather> Create
+                                   </a>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="card-body">
+                         <div class="table-responsive">
+                              <table class="table">
+                                   <thead>
+                                        <tr>
+                                             <th scope="col">Campaign Name</th>
+                                             <th scope="col">Created Date</th>
+                                             <th scope="col">Created By</th>
+                                             <th scope="col">Action</th>
+                                        </tr>
+                                   </thead>
+                                   <tbody>
+                                        <tr *ngFor="let campaign of campaigns">
+                                             <td>{{campaign.name}}</td>
+                                             <td>{{campaign.created_date}}</td>
+                                             <td>{{campaign.created_by}}</td>
+                                             <td>
+                                                  <a href="#" [routerLink]="['/campaign/edit', campaign.id]" class="btn btn-sm btn-success mr-2"> 
+                                                       <i-feather name="edit-2"></i-feather>
+                                                  </a>
+                                                  <a (click)="delete(campaign)" class="btn btn-sm btn-danger"> 
+                                                       <i-feather name="trash-2"></i-feather>
+                                                  </a>
+                                             </td>
+                                        </tr>
+                                   </tbody>
+                              </table>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

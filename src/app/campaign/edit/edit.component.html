@@ -1,0 +1,36 @@
+<div class="container">
+     <div class="row">
+          <div class="col-md-12">
+               <div class="card">
+                    <div class="card-header">
+                         <h3>Edit Campaign</h3>
+                    </div>
+                    <div class="card-body">
+                         <div class="row p-0">
+                              <div class="form-group col-md-6">
+                                   <label for="inputEmail4">Campaign Name</label>
+                                   <input type="text" [(ngModel)]="form.name" class="form-control" id="inputEmail4" placeholder="Email">
+                              </div>
+                              <div class="form-group col-md-6">
+                                   <label for="inputPassword4">Status</label>
+                                   <select class="form-control" [(ngModel)]="form.status">
+                                        <option value=""> SELECT STATUS </option>
+                                        <option value="LIVE">LIVE</option>
+                                        <option value="DRAFT">DRAFT</option>
+                                        <option value="INACTIVE">INACTIVE</option>
+                                   </select>
+                              </div>
+                              <div class="form-group col-md-6">
+                                   <label for="inputAddress">Cost</label>
+                                   <input type="text" [(ngModel)]="form.cost" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                              </div>
+                              <div class="form-group col-md-12">
+                              <button (click)="save()" class="btn btn-primary float-right">Submit</button>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>
+

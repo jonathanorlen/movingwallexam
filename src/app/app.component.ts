@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'movingwallexam';
+  toogle = true;
+
+  toogleSidebar(){
+    this.toogle = !this.toogle;
+    console.log(this.toogle);
+  }
 }

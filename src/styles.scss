@@ -1,1 +1,311 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+$lato-font: 'Lato', serif;  
+body {
+     background-color:#F4F7FE;
+     font-size:16px;
+         color: #6c757d;
+}
+
+ng-sidebar-container {
+     height: 100vh !important;
+}
+.sidebar-wrapper {
+     background-color: #fff;
+     height: 100%;
+     margin-left: 0;
+     transition: all 0.25s;
+     -webkit-transition: all 0.25s;
+     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+     position:fixed;
+     z-index:800;
+
+     .sidebar-heading{
+          display: inline-block;
+          width: 100%;
+          text-align: center;
+          height: 60px;
+          line-height: 60px;
+
+          a {
+               text-decoration: none;
+               text-transform: uppercase;
+               letter-spacing: 1.5px;
+               font-size: 1.2rem;
+               color: $dark;
+          }
+     }
+
+     .list-group{
+          width: 17.5rem;
+          padding: 0 1rem 0 1rem;
+          font-family: $lato-font;
+          .list-group-item{
+               padding: 1rem;
+               color: $gray;
+               text-decoration: none;
+               border-radius: 0.5rem;
+               border: 0px;
+               margin-top: 2px;
+
+               &:hover{
+                    transition: background-color .5s ease;
+                    background-color: $primary-800;
+                    color: #fff;
+                    // font-weight: bold;
+
+                    .list-group-item-icon{
+                         color: #fff;
+                    }
+               }
+
+               .list-group-item-icon{
+                    width:1.375rem;
+                    height: 1.375rem;
+                    color: $gray;
+                    margin-right: 1rem
+               }
+          }
+
+          .active{
+                    transition: background-color .5s ease;
+                    background-color: $primary;
+                    color: #fff;
+                    // font-weight: bold;
+
+                    .list-group-item-icon{
+                         color: #fff;
+                    }
+          }
+     }
+     &:after{
+          margin-left: 17.5px;
+     }
+}
+
+.navbar {
+     height: 4rem;
+}
+
+.page-content-wrapper {
+     position:relative;
+     padding-left: 280px;
+     min-width: 100vw; 
+     transition: all 0.25s;
+     -webkit-transition: all 0.25s;
+}
+
+.page-content-wrapper.toogle{
+     position:relative;
+     padding-left: 0px;
+     min-width: 100vw;
+     transition: all 0.25s;
+          -webkit-transition: all 0.25s;
+}
+
+.sidebar-wrapper.toogle{
+     margin-left:-17.5rem;
+     transition: all 0.25s;
+          -webkit-transition: all 0.25s;
+}
+
+// .toogle {
+//   margin-left: 0 !important;
+// }
+
+@media (max-width: 768px) {
+     .sidebar-wrapper.toogle {
+          margin-left: -17.5rem;
+
+          transition: all 0.25s;
+          -webkit-transition: all 0.25s;
+     }
+  
+     .page-content-wrapper.toogle {
+          position:relative;
+          padding-left: 0px;
+          width: 100%;
+
+          transition: all 0.25s;
+          -webkit-transition: all 0.25s;
+     }
+
+     .page-content-wrapper{
+          position:fixed;
+          min-width: 100vw;
+
+          transition: all 0.25s;
+          -webkit-transition: all 0.25s;
+     }
+
+     .sidebar-wrapper{
+          margin-left:0rem;
+
+          transition: all 0.25s;
+          -webkit-transition: all 0.25s;
+     }
+}
+
+.row{
+     padding: 2rem 1rem 0rem 1rem;
+}
+
+.card {
+     padding: 1rem;
+     border: 0px;
+     background: #FFFFFF;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
+     border-radius: .5rem;
+
+     h2{
+          font-size:1rem;
+          font-weight:400;
+          margin-bottom: .5rem
+     }
+
+     .number {
+          .icon {
+               width: 2rem;
+               height: 2rem;
+               border: 1rem;
+               color: $primary;
+               font-family: $lato-font;
+               position: relative;
+               top: -6px;
+               margin-right: 1rem;
+          }
+
+          .info{
+               font-size:1.75rem;
+               color: $dark;
+               font-weight: bold;
+               text-align: left;
+               display: inline-block;
+               margin: 0 auto;
+          }
+     }
+
+     .stats {
+          padding: auto;
+          font-size: .75rem;
+          display: inline-block;
+          text-align:left;
+
+          .icon {
+               width: 1.25rem;
+               position: static;
+               margin-right: 0px;
+               stroke-width: 3;
+          }
+     }
+
+     .card-header{
+          // padding: 1.25rem;
+          margin-bottom: 0;
+          background-color: #fff;
+          border-bottom-color: #f9f9f9;
+          line-height: 20px;
+     }
+}
+.col-xl, .col-xl-auto, .col-xl-12, 
+.col-xl-11, .col-xl-10, 
+.col-xl-9, .col-xl-8, 
+.col-xl-7, .col-xl-6, 
+.col-xl-5, .col-xl-4, 
+.col-xl-3, .col-xl-2, 
+.col-xl-1, .col-lg, 
+.col-lg-auto, 
+.col-lg-12, .col-lg-11, .col-lg-10, .col-lg-9, .col-lg-8, .col-lg-7, .col-lg-6, .col-lg-5, .col-lg-4, .col-lg-3, .col-lg-2, .col-lg-1, .col-md, .col-md-auto, .col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1, .col-sm, .col-sm-auto, .col-sm-12, .col-sm-11, .col-sm-10, .col-sm-9, .col-sm-8, .col-sm-7, .col-sm-6, .col-sm-5, .col-sm-4, .col-sm-3, .col-sm-2, .col-sm-1, .col, .col-auto, .col-12, .col-11, .col-10, .col-9, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1 {
+     padding: 0 1rem 0 1rem !important;
+}
+
+.btn {
+     i-feather{
+          position:relative;
+          top:-1px;
+     }
+}
+
+.btn-primary{
+     box-shadow: 0 2px 6px #acb5f6;
+     background-color: $primary-800;
+     border-color: $primary-800;
+}
+
+.btn-danger{
+     box-shadow: 0 2px 6px #fd9b96;
+     background-color: $danger;
+     border-color: $danger;
+     color: #fff;
+}
+
+.btn-info {
+    box-shadow: 0 2px 6px #82d3f8;
+    background-color: $info;
+    border-color: $info;
+    color: #fff;
+}
+
+.btn-warning {
+     box-shadow: 0 2px 6px #ffc473;
+     background-color: $warning;
+     border-color: $warning;
+     color: #fff;
+}
+
+.btn-success{
+    box-shadow: 0 2px 6px #a8f5b4;
+    background-color: $success;
+    border-color: $success;
+    color: #fff;
+}
+
+.toast-success {
+  background-color: $success;
+}
+.toast-error {
+  background-color: $danger;
+}
+.toast-info {
+  background-color: $info;
+}
+.toast-warning {
+  background-color: $warning;
+}
+
+.btn{
+     .feather {
+          width: 1rem;
+     }
+}
+
+.form-control:not(.form-control-sm):not(.form-control-lg) {
+    font-size: 14px;
+    padding: 10px 15px;
+    height: 42px;
+    
+    &:focus{
+         border: 1px solid $primary;
+         box-shadow: 0 0 0;
+    }
+}
+
+thead th {
+     border-bottom: none;
+     background-color: rgba(0, 0, 0, 0.04);
+     color: #666;
+     padding-top: 15px;
+     padding-bottom: 15px;
+     border-bottom: none !important;
+}
+
+th, td {
+     padding: 0 25px;
+     height: 60px;
+     vertical-align: middle !important;
+     border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
